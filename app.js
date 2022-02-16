@@ -10,6 +10,13 @@ function updateCaseNumber(product, isIncreasing, productUnitPrice) {
 
   productInput.value = productNumber;
 
+  const productMinus = document.getElementById(`${product}-minus`);
+  if (productInput.value > 0) {
+    productMinus.disabled = false;
+  } else {
+    productMinus.disabled = true;
+  }
+
   // Update Case Total
   const productTotal = document.getElementById(`${product}-total`);
   productTotal.innerText = productNumber * productUnitPrice;
