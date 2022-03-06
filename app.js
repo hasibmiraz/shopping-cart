@@ -20,30 +20,30 @@ function updateCaseNumber(product, isIncreasing, productUnitPrice) {
   // Update Case Total
   const productTotal = document.getElementById(`${product}-total`);
   productTotal.innerText = productNumber * productUnitPrice;
-  const caseTotal = parseInt(document.getElementById("case-total").innerText);
-  const phoneTotal = parseInt(document.getElementById("phone-total").innerText);
+  const caseTotal = parseInt(document.getElementById('case-total').innerText);
+  const phoneTotal = parseInt(document.getElementById('phone-total').innerText);
   const subTotal = caseTotal + phoneTotal;
-  document.getElementById("sub-total").innerText = subTotal;
+  document.getElementById('sub-total').innerText = subTotal;
 
   const taxTotal = parseFloat(subTotal * 0.1).toFixed(2);
-  document.getElementById("tax-total").innerText = taxTotal;
+  document.getElementById('tax-total').innerText = taxTotal;
 
-  document.getElementById("total-price").innerText =
+  document.getElementById('total-price').innerText =
     parseFloat(subTotal) + parseFloat(taxTotal);
 }
 
-document.getElementById("case-plus").addEventListener("click", function () {
-  updateCaseNumber("case", true, 59);
+document.getElementById('case-plus').addEventListener('click', function () {
+  updateCaseNumber('case', true, 59);
 });
 
-document.getElementById("case-minus").addEventListener("click", function () {
-  updateCaseNumber("case", false, 59);
+document.getElementById('case-minus').addEventListener('click', function () {
+  updateCaseNumber('case', false, 59);
 });
 
-document.getElementById("phone-plus").addEventListener("click", function () {
-  updateCaseNumber("phone", true, 1219);
+document.getElementById('phone-plus').addEventListener('click', function () {
+  updateCaseNumber('phone', true, 1219);
 });
 
-document.getElementById("phone-minus").addEventListener("click", function () {
-  updateCaseNumber("phone", false, 1219);
+document.getElementById('phone-minus').addEventListener('click', function () {
+  updateCaseNumber('phone', false, 1219);
 });
